@@ -19,11 +19,10 @@ $ omf install py-bira
 
 # License
 
-[MIT][mit] © [pix666][author]
+[MIT][mit]
 
 
 [mit]:            https://opensource.org/licenses/MIT
-[author]:         https://github.com/{{USER}}
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
