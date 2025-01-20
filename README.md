@@ -13,7 +13,7 @@
 ## Install
 
 ```fish
-$ omf install py-bira
+$ omf install dldevinc/theme-py-bira
 ```
 
 
