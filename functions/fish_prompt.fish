@@ -30,26 +30,35 @@ function __git_status
       set git_info '<'$git_branch'>'
     end
 
-    echo -n (set_color yellow) $git_info (set_color normal) 
+    if test -n "$git_info"
+      echo -n (set_color yellow)$git_info (set_color normal)
+    end
   end
 end
 
 function __python_version
   if type "python3" > /dev/null 2>&1
-    set python_version (python3 -V)
-    echo -n (set_color red) ‹$python_version› (set_color normal)
+    set python_version (python3 -V | cut -d ' ' -f2)
+    echo -n (set_color red)‹$python_version› (set_color normal)
   else if type "python" > /dev/null 2>&1
-    set python_version (python -V)
-    echo -n (set_color red) ‹$python_version› (set_color normal)
+    set python_version (python -V | cut -d ' ' -f2)
+    echo -n (set_color red)‹$python_version› (set_color normal)
   end
 end
 
+function __last_status
+  echo -n (set_color --bold magenta)\(status: $argv[1]\) (set_color normal)
+end
+
 function fish_prompt
+  set -l st $status
+
   echo -n (set_color white)"╭─"(set_color normal)
   __user_host
   __current_path
   __python_version
   __git_status
+  __last_status $st
   echo ''
   echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
 end
