@@ -16,6 +16,10 @@
 $ omf install https://github.com/dldevinc/theme-py-bira
 ```
 
+## Screenshot
+
+![image](https://github.com/user-attachments/assets/3ae2052d-6e41-45a3-a219-642b13c24c87)
+
 
 # License
 
