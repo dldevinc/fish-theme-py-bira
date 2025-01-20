@@ -38,7 +38,7 @@ function __python_version
   if type "python3" > /dev/null 2>&1
     set python_version (python3 -V)
     echo -n (set_color red) ‹$python_version› (set_color normal)
-  elif type "python" > /dev/null 2>&1
+  else if type "python" > /dev/null 2>&1
     set python_version (python -V)
     echo -n (set_color red) ‹$python_version› (set_color normal)
   end
